@@ -1,6 +1,6 @@
-# test_sweet
+# Test Sweet
 
-TODO: Write a gem description
+Integration testing your RubyMotion applications the simple and sweet way.
 
 ## Installation
 
@@ -11,6 +11,7 @@ Add this line to your application's Gemfile:
 And then execute:
 
     $ bundle
+    $ rake test_sweet
 
 Or install it yourself as:
 
@@ -18,7 +19,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+After you have initialized your Test Sweet you can add new features and run them with the same command.
+
+    $ rake test_sweet
 
 ## Contributing
 
