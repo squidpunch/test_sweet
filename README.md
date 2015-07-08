@@ -2,6 +2,11 @@
 
 Integration testing your RubyMotion applications the simple and sweet way.
 
+## Requirements
+
+- Test Sweet uses [Appium](https://github.com/appium/appium#quick-start) for driving your integration tests.
+- Head on over there and install based on the instructions they have provided.
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -13,11 +18,9 @@ And then execute:
     $ bundle
     $ rake test_sweet
 
-Or install it yourself as:
-
-    $ gem install test_sweet
-
 ## Usage
+
+Start the Appium server
 
 After you have initialized your Test Sweet you can add new features and run them with the same command.
 
