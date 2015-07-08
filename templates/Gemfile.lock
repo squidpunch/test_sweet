@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    test_sweet (0.1.0)
+    sabram (0.1.8)
       appium_lib (>= 7.0)
       cucumber (>= 2.0)
       motion-juxtapose (>= 0.3)
@@ -85,4 +85,4 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.9)
   rake (~> 10.0)
-  test_sweet!
+  sabram!
