@@ -11,11 +11,9 @@ class TestSweet
     gem_root = spec.gem_dir
 
     files = [
-      'features/support/env.rb',
-      'features/step_definitions/core_steps.rb',
+      'features/example.feature',
       'features/step_definitions/example_steps.rb',
-      'features/step_definitions/screenshotting_steps.rb',
-      'features/example.feature'
+      'features/support/env.rb'
     ]
 
     files.each do |f|

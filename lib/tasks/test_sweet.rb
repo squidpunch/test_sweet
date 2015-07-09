@@ -1,11 +1,9 @@
 namespace :test_sweet do
   desc "Initial setup of Test Sweet"
   task :initialize do
-    if TestSweet.verify_initialized
-      puts "TestSweet seems to already be initialized, start testing!"
-    else
+    if !TestSweet.verify_initialized
       TestSweet.init
-      puts "TestSweet has been setup, write your features and run again!"
+      puts "TestSweet has been setup, write your features and start testing!"
     end
   end
 
@@ -17,7 +15,7 @@ namespace :test_sweet do
   task :run do
     if TestSweet.verify_initialized
       Rake::Task["test_sweet:prepare"].invoke
-      ENV['test_sweet-target'] = Motion::Project::App.config.deployment_target
+      ENV['test_sweet-target'] = Motion::Project::App.config.deployment_target || ENV['target']
       ENV['test_sweet-app'] = Motion::Project::App.config.app_bundle('iPhoneSimulator')
       ENV['test_sweet-device-name'] = Motion::Project::App.config.device_family_string(
         ENV['device'],
@@ -27,7 +25,7 @@ namespace :test_sweet do
 
       exec("cucumber")
     else
-      Rake::Task["test_sweet:initialize"].invoke
+      puts "TestSweet is not initialized; please run: `rake test_sweet:initialize`"
     end
   end
 end
