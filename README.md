@@ -4,7 +4,7 @@ Integration testing your RubyMotion applications the simple and sweet way.
 
 ## Requirements
 
-- Test Sweet uses [Appium](https://github.com/appium/appium#quick-start) for driving your integration tests.
+- **Test Sweet** uses [Appium](https://github.com/appium/appium#quick-start) for driving your integration tests.
 - Head on over there and install based on the instructions they have provided.
 
 ## Installation
@@ -23,7 +23,7 @@ And then execute:
 Start the Appium server
 
 You can build and run your app together in one call
-After you have initialized your Test Sweet you can add new features and run them with the provided rake task.
+After you have initialized your **Test Sweet** you can add new features and run them with the provided rake task.
 
     $ rake test_sweet
 
