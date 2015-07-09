@@ -22,9 +22,14 @@ And then execute:
 
 Start the Appium server
 
-After you have initialized your Test Sweet you can add new features and run them with the same command.
+You can build and run your app together in one call
+After you have initialized your Test Sweet you can add new features and run them with the provided rake task.
 
     $ rake test_sweet
+
+Or if you prefer to pre-build your app with some setup on your side, you can just run the tests without the build task
+
+    $ rake test_sweet:run
 
 ## Contributing
 

@@ -7,14 +7,9 @@ namespace :test_sweet do
     end
   end
 
-  task :prepare do
-    Rake::Task["build:simulator"].invoke
-  end
-
   desc "Run integration tests"
   task :run do
     if TestSweet.verify_initialized
-      Rake::Task["test_sweet:prepare"].invoke
       ENV['test_sweet-target'] = Motion::Project::App.config.deployment_target || ENV['target']
       ENV['test_sweet-app'] = Motion::Project::App.config.app_bundle('iPhoneSimulator')
       ENV['test_sweet-device-name'] = Motion::Project::App.config.device_family_string(
@@ -29,5 +24,8 @@ namespace :test_sweet do
     end
   end
 end
-desc "Shorthand for test_sweet:run"
-task :test_sweet => ["test_sweet:run"]
+desc "Build your app and run integration tests"
+task :test_sweet do
+  Rake::Task["build:simulator"].invoke
+  Rake::Task["test_sweet:run"].invoke(args)
+end
