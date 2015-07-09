@@ -16,7 +16,7 @@ Add this line to your application's Gemfile:
 And then execute:
 
     $ bundle
-    $ rake test_sweet
+    $ rake test_sweet:initialize
 
 ## Usage
 
