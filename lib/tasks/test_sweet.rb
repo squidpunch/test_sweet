@@ -12,14 +12,19 @@ namespace :test_sweet do
     if TestSweet.verify_initialized
       ENV['test_sweet-target'] = Motion::Project::App.config.deployment_target || ENV['target']
       ENV['test_sweet-app'] = Motion::Project::App.config.app_bundle('iPhoneSimulator')
-      ENV['test_sweet-device-name'] = Motion::Project::App.config.device_family_string(
-        ENV['device'],
-        Motion::Project::App.config.device_family_ints[0],
-        ENV['test_sweet-target'],
-        ENV['retina'])
-      Cucumber::Rake::Task.new(:features, "") do |t|
-        t.cucumber_opts = "--format pretty #{ENV["FEATURES"] || "features"}"
-      end.runner.run
+
+      if !File.exists? ENV['test_sweet-app']
+        puts "No application at #{ENV['test_sweet-app']} - please build your app!"
+      else
+        ENV['test_sweet-device-name'] = Motion::Project::App.config.device_family_string(
+          ENV['device'],
+          Motion::Project::App.config.device_family_ints[0],
+          ENV['test_sweet-target'],
+          ENV['retina'])
+        Cucumber::Rake::Task.new(:features, "") do |t|
+          t.cucumber_opts = "--format pretty #{ENV["FEATURES"] || "features"}"
+        end.runner.run
+      end
     else
       puts "TestSweet is not initialized; please run: `rake test_sweet:initialize`"
     end
