@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+class TestSweetCommandLine
+  def self.help
+    %{ Use Test Sweet to run all your integration tests.
+    Try some of these usage examples:
+
+    > test_sweet # build and run all your features
+    > test_sweet features/you_made.feature #runs the features/you_made feature file
+    > test_sweet features/you_made.feature:13 #runs the scenario on line 13 of features/you_made feature file
+    }
+  end
+end
+
+action = ARGV[0]
+
+case action
+when "help"
+  puts TestSweetCommandLine.help
+else
+  system("FEATURES=#{ARGV.join(" ")} rake test_sweet:run")
+end

@@ -2,6 +2,7 @@ require "test_sweet/version"
 require 'fileutils'
 require "rubygems"
 require "tasks/test_sweet"
+require 'cucumber/rake/task'
 
 class TestSweet
   def self.init

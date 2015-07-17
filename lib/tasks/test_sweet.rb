@@ -17,15 +17,17 @@ namespace :test_sweet do
         Motion::Project::App.config.device_family_ints[0],
         ENV['test_sweet-target'],
         ENV['retina'])
-
-      exec("cucumber")
+      Cucumber::Rake::Task.new(:features, "") do |t|
+        t.cucumber_opts = "--format pretty #{ENV["FEATURES"] || "features"}"
+      end.runner.run
     else
       puts "TestSweet is not initialized; please run: `rake test_sweet:initialize`"
     end
   end
 end
+
 desc "Build your app and run integration tests"
 task :test_sweet do
   Rake::Task["build:simulator"].invoke
-  Rake::Task["test_sweet:run"].invoke(args)
+  Rake::Task["test_sweet:run"].invoke
 end

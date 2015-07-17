@@ -31,6 +31,10 @@ Or if you prefer to pre-build your app with some setup on your side, you can jus
 
     $ rake test_sweet:run
 
+Finally you can also use the CLI runner to run your features not using rake
+
+    $ test_sweet
+
 ## Contributing
 
 1. Fork it
