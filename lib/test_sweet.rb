@@ -1,8 +1,9 @@
-require "test_sweet/version"
-require 'fileutils'
+require "fileutils"
 require "rubygems"
 require "tasks/test_sweet"
-require 'cucumber/rake/task'
+require "cucumber/rake/task"
+require "test_sweet/version"
+require "test_sweet/config"
 
 class TestSweet
   def self.init
@@ -12,20 +13,20 @@ class TestSweet
     gem_root = spec.gem_dir
 
     files = [
-      'features/example.feature',
-      'features/step_definitions/example_steps.rb',
-      'features/support/env.rb'
+      "features/example.feature",
+      "features/step_definitions/example_steps.rb",
+      "features/support/env.rb"
     ]
 
     files.each do |f|
       content = File.open("#{gem_root}/templates/#{f}", "r").read
-      File.open(f, 'w+') { |file| file.write(content) }
+      File.open(f, "w+") { |file| file.write(content) }
     end
   end
 
   def self.verify_initialized
     begin
-      File.new('features/support/env.rb')
+      File.new("features/support/env.rb")
       true
     rescue Errno::ENOENT
       false
