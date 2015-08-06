@@ -12,7 +12,7 @@ class AppiumWorld; end
 
 caps = {
   caps: {
-    platformName: "ios",
+    platformName: ENV['test_sweet-platform'],
     platformVersion: ENV['test_sweet-target'],
     app: ENV['test_sweet-app'],
     deviceName: ENV['test_sweet-device-name']
