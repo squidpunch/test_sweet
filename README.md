@@ -34,6 +34,22 @@ Or if you prefer to pre-build your app with some setup on your side, you can jus
 Finally you can also use the CLI runner to run your features not using rake
 
     $ test_sweet
+    
+## Built in Steps
+
+##### Screenshot comparisms using motion-juxtapose
+You can use this easily by simply providing a name for the screen, like so:
+
+```Gherkin
+# The simplest way, simply give the screen name that should be used to compare against
+Then the screen should match "the login screen"
+
+# If you need to provide a fuzz_factor to motion-juxtapose you can use this instead
+Then the screen should match "the login screen" with a fuzz factor of 1
+
+# Finally if you also want it to try less times by default to increase speed of your tests
+Then the screen should match "the login screen" with a fuzz factor of 1 with 5 max attempts
+```
 
 ## Contributing
 
