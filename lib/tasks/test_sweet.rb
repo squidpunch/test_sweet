@@ -14,7 +14,7 @@ namespace :test_sweet do
         ENV['test_sweet-platform'] = "Android"
         ENV['test_sweet-app'] = Motion::Project::App.config.apk_path
       else
-        ENV['test_sweet-target'] = Motion::Project::App.config.deployment_target || ENV['target']
+        ENV['test_sweet-target'] = ENV['target'] || Motion::Project::App.config.deployment_target
         ENV['test_sweet-app'] = Motion::Project::App.config.app_bundle('iPhoneSimulator')
         ENV['test_sweet-platform'] = "iOS"
         ENV['test_sweet-device-name'] = Motion::Project::App.config.device_family_string(
