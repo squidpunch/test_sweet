@@ -1,5 +1,5 @@
 Feature: Running a test
-  As an mobile developer
+  As a mobile developer
   I want to have a sample feature file
   So I can begin testing quickly
 
