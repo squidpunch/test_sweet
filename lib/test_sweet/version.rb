@@ -1,3 +1,3 @@
 class TestSweet
-  VERSION = "0.5.2"
+  VERSION = "0.6.2"
 end
