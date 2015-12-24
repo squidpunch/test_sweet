@@ -22,6 +22,7 @@ namespace :test_sweet do
           Motion::Project::App.config.device_family_ints[0],
           ENV['test_sweet-target'],
           ENV['retina'])
+        ENV['test_sweet-no-reset'] = ENV['noreset'] || 'false'
       end
 
       if !File.exists? ENV['test_sweet-app']

@@ -15,7 +15,8 @@ caps = {
     platformName: ENV['test_sweet-platform'],
     platformVersion: ENV['test_sweet-target'],
     app: ENV['test_sweet-app'],
-    deviceName: ENV['test_sweet-device-name']
+    deviceName: ENV['test_sweet-device-name'],
+    noReset: ENV['test_sweet-no-reset']
   }
 }
 Appium::Driver.new(caps)
