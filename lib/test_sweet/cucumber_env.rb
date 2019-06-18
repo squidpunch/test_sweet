@@ -1,6 +1,5 @@
 require 'rspec'
 require 'appium_lib'
-require 'cucumber/ast'
 require 'motion-juxtapose'
 require "test_sweet/core_steps"
 require "test_sweet/screenshotting_steps"
@@ -12,6 +11,7 @@ class AppiumWorld; end
 
 caps = {
   caps: {
+    automationName: ENV['test_sweet-automation'],
     platformName: ENV['test_sweet-platform'],
     platformVersion: ENV['test_sweet-target'],
     app: ENV['test_sweet-app'],
@@ -19,7 +19,7 @@ caps = {
     noReset: ENV['test_sweet-no-reset']
   }
 }
-Appium::Driver.new(caps)
+Appium::Driver.new(caps, true)
 
 Appium.promote_appium_methods AppiumWorld
 
