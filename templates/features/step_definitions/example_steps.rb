@@ -1,3 +1,7 @@
+#
+#  This file is generated, and mostly useful for ensuring your test_sweet environment is
+#  set up properly. After you have written your own steps, feel free to delete.
+#
 Given(/^I touch the screen$/) do
   step %~I touch at position 160,100~
 end
