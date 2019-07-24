@@ -37,7 +37,7 @@ Finally you can also use the CLI runner to run your features not using rake
     
 ## Built in Steps
 
-##### Screenshot comparisms using motion-juxtapose
+##### Screenshot comparisons using motion-juxtapose
 You can use this easily by simply providing a name for the screen, like so:
 
 ```Gherkin
